@@ -1,3 +1,5 @@
+global using OpenQA.Selenium.Chrome;
+
 namespace NUnitSelenium;
 
 public abstract class BaseTest

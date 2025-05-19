@@ -22,4 +22,8 @@
         <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="136.0.7103.9400" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\SeleniumPOM\SeleniumPOM.csproj" />
+    </ItemGroup>
+
 </Project>
