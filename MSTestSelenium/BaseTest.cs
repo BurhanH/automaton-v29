@@ -7,7 +7,12 @@ public abstract class BaseTest
     [TestInitialize]
     public void Initialize()
     {
-        driver = new ChromeDriver();
+        var options = new ChromeOptions();
+        options.AddArgument("--headless=new");
+        
+        driver = new ChromeDriver(options);
+        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+        driver.Manage().Window.Maximize();
     }
     
     [TestCleanup]

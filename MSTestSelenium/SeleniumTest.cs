@@ -19,8 +19,6 @@ public class SeleniumTest : BaseTest
         var actions = new Actions(driver);
         actions.MoveToElement(link).Click().Perform();
         
-        driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-        
         Assert.AreEqual("https://www.selenium.dev/documentation/webdriver/", driver.Url);
     }
 }
