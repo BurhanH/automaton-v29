@@ -1,3 +1,4 @@
+using SeleniumPOM;
 
 namespace MSTestSelenium;
 
@@ -7,18 +8,22 @@ public class SeleniumTest : BaseTest
     [TestMethod]
     public void NavigateToSelenium()
     {
-        driver.Navigate().GoToUrl("https://selenium.dev");
+        // Arrange
+        var mainPage = new MainPage(driver);
+        var webDriverPage = new WebDriverPage(driver);
         
-        Assert.AreEqual("Selenium", driver.Title);
+        // Act
+        mainPage.GoToMainPage();
         
-        var link = driver.FindElement(By.CssSelector(".selenium-button.selenium-webdriver"));
+        // Assert
+        Assert.AreEqual(mainPage.Url, driver.Url);
+        Assert.AreEqual(mainPage.Title, driver.Title);
         
-        Assert.IsTrue(link.Displayed);
+        // Act
+        mainPage.GoToWebDriverPage();
         
-        // Use Actions class for better interaction
-        var actions = new Actions(driver);
-        actions.MoveToElement(link).Click().Perform();
-        
-        Assert.AreEqual("https://www.selenium.dev/documentation/webdriver/", driver.Url);
+        // Assert
+        Assert.AreEqual(webDriverPage.Url, driver.Url);
+        Assert.AreEqual(webDriverPage.Title, driver.Title);
     }
 }

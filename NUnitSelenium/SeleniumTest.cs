@@ -1,3 +1,5 @@
+using SeleniumPOM;
+
 namespace NUnitSelenium;
 
 public class SeleniumTests : BaseTest
@@ -5,17 +7,22 @@ public class SeleniumTests : BaseTest
     [Test]
     public void SeleniumTest()
     {
-        driver.Navigate().GoToUrl("https://selenium.dev");
+        // Arrange
+        var mainPage = new MainPage(driver);
+        var webDriverPage = new WebDriverPage(driver);
+        
+        // Act
+        mainPage.GoToMainPage();
+        
+        // Assert
+        Assert.That(driver.Url, Is.EqualTo(mainPage.Url));
+        Assert.That(driver.Title, Is.EqualTo(mainPage.Title));
 
-        Assert.That(driver.Title, Is.EqualTo("Selenium"));
-
-        var link = driver.FindElement(By.CssSelector(".selenium-button.selenium-webdriver"));
-        Assert.That(link.Displayed, Is.True);
-
-        // Use Actions class for better interaction
-        var actions = new Actions(driver);
-        actions.MoveToElement(link).Click().Perform();
-
-        Assert.That(driver.Url, Is.EqualTo("https://www.selenium.dev/documentation/webdriver/"));
+        // Act
+        mainPage.GoToWebDriverPage();
+        
+        // Assert
+        Assert.That(driver.Url, Is.EqualTo(webDriverPage.Url));
+        Assert.That(driver.Title, Is.EqualTo(webDriverPage.Title));
     }
 }

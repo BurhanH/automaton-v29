@@ -28,6 +28,12 @@ MSTest, NUnit<br>
        |-- NUnitSelenium.csproj
        |-- NUnitSelenium.sln
        |-- SeleniumTest.cs
+   `-- SeleniumPOM
+       |-- GlobalUsing.cs
+       |-- MainPage.cs
+       |-- SeleniumPOM.csproj
+       |-- SeleniumPOM.sln
+       |-- WebDriverPage.cs
    |-- .gitignore
    |-- LICENSE
    |-- README.md
@@ -42,3 +48,4 @@ MSTest, NUnit<br>
 5. [Selenium](https://www.selenium.dev/)
 6. [CSS Selectors](https://www.w3schools.com/cssref/css_selectors.php)
 7. [GitHub Actions](https://github.com/features/actions)
+8. [POM](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)
