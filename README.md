@@ -6,6 +6,8 @@ Automation testing framework (UI) - an example. Based on C#, .Net8, MSTest, NUni
 [![Tests](https://github.com/BurhanH/automaton-v29/actions/workflows/dotnet-mstest.yml/badge.svg)](https://github.com/BurhanH/automaton-v29/actions/workflows/dotnet-mstest.yml)
 [![Tests](https://github.com/BurhanH/automaton-v29/actions/workflows/dotnet-nunit.yml/badge.svg)](https://github.com/BurhanH/automaton-v29/actions/workflows/dotnet-nunit.yml)
 ![](https://badgen.net/static/made/by%20human/green)
+
+This project, `automaton-v29`, serves as a practical example of an automation testing framework. It demonstrates the use of C#, .Net8, MSTest, NUnit, and Selenium to create robust and maintainable automated tests. Additionally, it includes an implementation of the Page Object Model (POM) design pattern, showcasing best practices for web UI automation.
  
 ## Requirements
 .Net8, Selenium, <br>
